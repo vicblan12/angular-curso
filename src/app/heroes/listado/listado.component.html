@@ -1,0 +1,23 @@
+<p>Listado de Heroes</p>
+
+    
+    <button (click)=" borrarHeroe()" > Borrar </button>
+
+    <!-- ejemplo de else-if con una referencia local en ng-template -->
+
+    <div *ngIf="delHeroe.length > 0; else noBorrado">
+        <h3>Heroe Borrado:</h3><small><b> {{ delHeroe }} </b></small>
+    </div>
+    <!-- el nombre de la referencia local -->
+    <ng-template #noBorrado>
+ 
+            <h3>No se ha borrado nada aún.</h3>
+
+    </ng-template>
+
+<ul>
+    <!-- Creamos la variable i para mostrar los numeros de la lista -->
+    <li *ngFor="let heroes of heroes; let i = index">
+            {{ i+1 }} - {{ heroes }}
+    </li>
+</ul>

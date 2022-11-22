@@ -1,0 +1,7 @@
+Paso 1: Crear un nuevo repositorio
+
+git init (En el repositorio raiz)
+
+git remote add origin https://github.com/vicblan12/angular-curso.git
+git branch -M main
+git push -u origin main
