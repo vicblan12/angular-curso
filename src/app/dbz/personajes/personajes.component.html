@@ -1,0 +1,9 @@
+<div class="col">
+    <h3>Personajes</h3>
+    <hr>
+    <ul>
+        <li *ngFor="let personaje of personaje, let i = index">
+            {{ i+1 }} # {{ personaje.nombre }} ki: {{ personaje.poder | number }}
+        </li>
+    </ul>
+</div>

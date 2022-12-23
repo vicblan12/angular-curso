@@ -1,0 +1,31 @@
+<h1>Dragon Ball Z</h1>
+<hr>
+
+<div class="row">
+     <app-personajes > <!-- Aqui se le envia el array al componente hijo (Basicamente el componente padre ejecuta sus funciones y le envia los cambios al hijo) -->
+
+    </app-personajes>
+
+    <!-- <app-agregar 
+    [nuevo]="nuevo"
+    (onNewPerson)="agregarPersonaje( $event )" 
+    ></app-agregar> -->
+    <!-- Recibimos el objeto que se emite en el evento, como lo declaramos en el emisor -->
+
+    <app-agregar 
+    [nuevo]="nuevo"
+    ></app-agregar>
+    
+    <!-- <div class="col">
+        <h3>Personajes</h3>
+        <hr>
+        <ul>
+            <li *ngFor="let personaje of personaje, let i = index">
+                {{ i+1 }} # {{ personaje.nombre }} ki: {{ personaje.poder | number }}
+            </li>
+        </ul>
+    </div> -->
+    <div class="col">
+        
+    </div>
+</div>
