@@ -1,0 +1,17 @@
+<div class="bg-dark border-right p-3" id='sidebar'>
+    <h3 class="text-light">
+      Gifs-App
+    </h3>
+    <hr class="text-white"/> <!-- Linea que separa el menu del titulo -->
+    <div class="list-group list-reset">
+
+      <!-- Creamos una variable con la directiva *ngFor que actua como bucle para crear un componente a por cada elemento que exista en la variable history -->
+      <a *ngFor="let historys of history" 
+         href="#"
+         (click)="buscar( historys )"
+         class="list-group-item list-group-item-action"> <!-- Clases para darle aspecto de botón a la lista a-->
+        {{ historys | titlecase }} <!-- Este pipe capitaliza el texto  -->
+      </a>
+
+    </div>
+  </div>

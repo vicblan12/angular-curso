@@ -1,0 +1,11 @@
+<h5>Buscar:</h5>
+        <!-- keyup es el evento al presionar cualquier tecla -->
+        <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Buscar Gifs"
+        (keyup.enter)="buscar()"
+        #txtBuscar>
+        <!-- #txtBuscar es la referencia del input, con esa referencia puedo enviar su valor y otras cosas 
+        (keyup.enter) es el tipo de evento que se oye al dar enter
+        -->
