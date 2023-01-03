@@ -1,0 +1,25 @@
+<h2>Busquedas</h2>
+        <hr/>
+        <ul class="list-group">
+            
+            <!-- Se le coloca la directiva routerLinkActive="active" para decirle que cuando este activa la ruta coloque esa clase (active) 
+                 En el caso de la ruta raiz se le coloca el exact: true para que solo se active cuando sea exacta   
+            -->
+
+            <li routerLink=""
+                routerLinkActive="active" 
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="list-group-item"
+                >Buscar país</li>
+
+            <li routerLink="region"
+                routerLinkActive="active"
+                class="list-group-item"
+                >Por Región</li>
+
+            <li routerLink="capital"
+                routerLinkActive="active"
+                class="list-group-item"
+                >Por Capital</li>
+
+        </ul>
