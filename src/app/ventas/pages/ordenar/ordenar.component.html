@@ -1,0 +1,89 @@
+
+<div class="text-layout">
+    <!-- activateMayusc es una propiedad creada en el component ts que emite un valor booleano -->
+    <h1>Pipes Personalizados</h1>
+    <p>
+        Pipes creados manualmente por {{ 'nosotros'| mayusculas: activateMayusc }} 
+    </p>
+
+</div>
+
+<p-toolbar>
+    <div class="p-toolbar-group-start"></div>
+       
+
+    <div class="p-toolbar-group-end">
+
+        <button pButton label="Cambiar" 
+                  class="p-button-secondary mr-1" 
+                  (click)="cambiarMayus()" ></button>
+        
+        <button pButton icon="pi pi-sort" 
+                  label="Por nombre"
+                  (click)="cambiarOrden( 'nombre' )"
+                  class="mr-1">
+        </button>
+
+        <button pButton icon="pi pi-sort" 
+                  label="Por Vuela"
+                  (click)="cambiarOrden( 'vuela' )"
+                  class="mr-1 p-button-success">
+        </button>
+
+        <button pButton icon="pi pi-sort" 
+                  label="Por Color"
+                  (click)="cambiarOrden( 'color' )"
+                  class="mr-1 p-button-warning">
+        </button>
+        
+    </div>
+    
+</p-toolbar>
+
+<div class="grid">
+    <div class="col mt-5">
+
+        <p-table [value]="heroes | slice:0">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Vuela</th>
+                    <th>Color</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-heroes>
+                <tr>
+                    <td>{{heroes.nombre}}</td>
+                    <td>{{heroes.vuela | vuela | titlecase}}</td>
+                    <td>{{heroes.color}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+    </div>
+</div>
+
+<div class="grid">
+    <div class="col mt-5">
+
+        <p-table [value]="heroes">
+            <ng-template pTemplate="header">
+                <tr>
+                    <!-- la variable que va dentro de sortable tiene que coincidir con alguna propiedad del objeto que se esta recorriendo. Con la propiedad del array -->
+                    <!-- Esto es para poder filtrar por los valores de la columna -->
+                    <th pSortableColumn="nombre">Nombre<p-sortIcon field="nombre"></p-sortIcon>
+                    <th pSortableColumn="vuela">Vuela<p-sortIcon field="vuela"></p-sortIcon>
+                    <th pSortableColumn="color">Color<p-sortIcon field="color"></p-sortIcon>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-heroes>
+                <tr>
+                    <td>{{heroes.nombre}}</td>
+                    <td>{{heroes.vuela | vuela | titlecase}}</td>
+                    <td>{{heroes.color}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+    </div>
+</div>
